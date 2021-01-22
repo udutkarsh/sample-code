@@ -126,7 +126,7 @@
         "80c8982d-f5df-4d31-b828-5d537d8f67aa"
       ],
       "requisiteStageRefIds": [
-        "6"
+        "4"
       ],
       "source": "artifact",
       "type": "deployManifest"
@@ -147,7 +147,7 @@
         "securityGroups": []
       },
       "requisiteStageRefIds": [
-        "6"
+        "4"
       ],
       "source": "artifact",
       "type": "deployManifest"
@@ -183,7 +183,10 @@
       "name": "Deploy to Production?",
       "notifications": [],
       "refId": "4",
-      "requisiteStageRefIds": [],
+      "requisiteStageRefIds": [
+		"3",
+		"5"
+	  ],
       "type": "manualJudgment"
     },
     
