@@ -1,9 +1,12 @@
 kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 metadata:
   name: sample-backend-canary
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: sample
   template:
     metadata:
       name: backend
@@ -14,7 +17,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: gcr.io/PROJECT/sample-app
+        image: gcr.io/in-gcp-ssicloudcoe/sample-img
         resources:
           limits:
             memory: "500Mi"
