@@ -177,18 +177,6 @@
       "source": "artifact",
       "type": "deployManifest"
     },
-    {
-      "failPipeline": true,
-      "judgmentInputs": [],
-      "name": "Deploy to Production?",
-      "notifications": [],
-      "refId": "4",
-      "requisiteStageRefIds": [
-		"3",
-		"5"
-	  ],
-      "type": "manualJudgment"
-    },
     
     {
       "account": "default",
@@ -199,7 +187,7 @@
         "app": "sample"
       },
       "name": "Deploy Backend Canary Service",
-      "refId": "5",
+      "refId": "4",
       "relationships": {
         "loadBalancers": [],
         "securityGroups": []
@@ -207,6 +195,18 @@
       "requisiteStageRefIds": [],
       "source": "artifact",
       "type": "deployManifest"
+    },
+    {
+      "failPipeline": true,
+      "judgmentInputs": [],
+      "name": "Deploy to Production?",
+      "notifications": [],
+      "refId": "5",
+      "requisiteStageRefIds": [
+		"3",
+		"4"
+	  ],
+      "type": "manualJudgment"
     }
   ],
   "triggers": [
